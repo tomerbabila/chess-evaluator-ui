@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'About', href: '/about' },
 ];
 
-const Header: React.FC = () => {
+export default function Header() {
   const isAuthenticated = true; // Replace with actual auth state
   const currentUser = { id: 'me', username: 'Guest' };
   const location = useLocation(); // Get current location
@@ -83,6 +83,4 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

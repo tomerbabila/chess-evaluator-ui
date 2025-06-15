@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Chess } from '@/components';
 
 const Analyze: React.FC = () => {
   const [movesHistory, setMovesHistory] = useState<string[]>([]); // chosenPiece state removed
@@ -44,11 +45,8 @@ const Analyze: React.FC = () => {
         {/* Left Column: Chess Board and Analysis Buttons (as a Card) */}
         <Card className='flex-1 flex flex-col items-center p-4'>
           {/* CardHeader removed */}
-          <CardContent className='w-full flex flex-col items-center'>
-            {/* Placeholder for Chess Board */}
-            <div className='w-full max-w-md aspect-square bg-muted border border-border flex items-center justify-center rounded-md mb-6'>
-              <p className='text-muted-foreground text-lg'>Chess Board Placeholder</p>
-            </div>
+          <CardContent className='w-full flex flex-col items-center gap-4'>
+            <Chess />
 
             {/* Analysis Buttons */}
             <div className='flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 w-full max-w-md'>
@@ -71,7 +69,7 @@ const Analyze: React.FC = () => {
         {/* Right Column: Moves History and Control Buttons (as a Card) */}
         <Card className='w-full lg:w-1/3 flex flex-col p-4'>
           {/* CardHeader removed */}
-          <CardContent className='flex-grow flex flex-col'>
+          <CardContent className='flex-grow flex flex-col gap-4'>
             {/* Moves History */}
             <h2 className='text-xl font-semibold text-foreground mb-3'>Moves History</h2>
             <div className='flex-grow bg-muted border border-border rounded-md p-3 overflow-y-auto max-h-96'>

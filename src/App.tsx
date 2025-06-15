@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home, Layout, Analyze } from './pages';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='analyze' element={<Analyze />} />
-        {/* <Route path='game/:gameId' element={<GamePage />} />
+    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='analyze' element={<Analyze />} />
+          {/* <Route path='game/:gameId' element={<GamePage />} />
         <Route path='my-games' element={<MyGamesPage />} />
         <Route path='users/:userId' element={<UserPage />} />
         <Route path='login' element={<LoginPage />} />
@@ -15,8 +17,9 @@ function App() {
         <Route path='settings' element={<SettingsPage />} />
         <Route path='about' element={<AboutPage />} />
         <Route path='*' element={<NotFoundPage />} /> */}
-      </Route>
-    </Routes>
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
